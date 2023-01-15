@@ -3,13 +3,18 @@ import Hex from "./Hex";
 import "./Layout.scss";
 
 export default function Layout() {
+  // props
   let width = 100;
-  let offset = (width * 1) / 4;
-  let small = true;
+  let small = false;
+
+  let offset = width / 4;
 
   function hexColumn(amount, lastColumn = false) {
     return (
-      <div className="Layout__column" style={{ marginRight: lastColumn ? "" : -offset }}>
+      <div
+        className="Layout__column"
+        style={{ marginRight: lastColumn ? "" : -offset }}
+      >
         {[...Array(amount)].map(() => {
           return <Hex />;
         })}
@@ -42,7 +47,6 @@ export default function Layout() {
       </>
     );
   }
-
 
   return <div className="Layout">{small ? smallBoard() : largeBoard()}</div>;
 }

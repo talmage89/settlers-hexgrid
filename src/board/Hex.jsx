@@ -2,8 +2,8 @@ import React from "react";
 import "./Hex.scss";
 
 export default function Hex() {
-    let width = 100;
-    let height = width * Math.sin((60 * Math.PI) / 180); // width * sin(60deg)
+  let width = 100;
+  let height = width * Math.sin((60 * Math.PI) / 180); // width * sin(60deg)
 
   function getRandomColor() {
     var letters = "0123456789ABCDEF";
@@ -14,5 +14,14 @@ export default function Hex() {
     return color;
   }
 
-  return <div className="Hex" style={{ width: width, height: height, backgroundColor: getRandomColor() }}></div>;
+  return (
+    <div
+      className="Hex"
+      style={{
+        width: width,
+        height: height,
+        backgroundColor: getRandomColor(),
+      }}
+    ></div>
+  );
 }
